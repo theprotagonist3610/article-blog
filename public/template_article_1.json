@@ -1,0 +1,51 @@
+{
+    "titre": "",
+    "img": "",
+    "introduction":"",
+    "contenu": [
+      {
+        "titre": "",
+        "contenu": ""
+      },
+      {
+        "titre": "",
+        "contenu": ""
+      },
+      {
+        "titre": "",
+        "contenu": ""
+      },
+      { "image": true, "url": "" },
+      {
+        "titre": "",
+        "contenu": ""
+      },
+      {
+        "titre": "",
+        "contenu": ""
+      },
+      {
+        "titre": "",
+        "contenu": ""
+      },
+      { "image": true, "url": "" },
+      {
+        "titre": "",
+        "contenu": ""
+      },
+      {
+        "titre": "",
+        "contenu": ""
+      }
+    ],
+    "auteur": "",
+    "creation": "27 février 2023",
+    "nbre_lu": "8",
+    "like": "12",
+    "commentaires": [
+      { "pseudo": "boss", "creation": "23 Janvier 2023", "like": "23" },
+      { "pseudo": "grand@chef", "creation": "7 Mars 2023", "like": "4" },
+      { "pseudo": "pulvinar@123", "creation": "8 Mars 2023", "like": "234" },
+      { "pseudo": "pascal@grand", "creation": "9 Mars 2023S", "like": "1" }
+    ]
+  }

@@ -1,0 +1,111 @@
+{
+  "categories": [
+    {
+      "name": "Technologie",
+      "couleur":"#D6BB58",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_1.json",
+        "template_article_3.json",
+        "template_article_2.json"
+      ]
+    },
+    {
+      "name": "tourisme",
+      "couleur":"#1B76CB",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_2.json",
+        "template_article_1.json",
+        "template_article_3.json"
+      ]
+    },
+    {
+      "name": "culture",
+      "couleur":"#8F31E0",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_1.json",
+        "template_article_2.json",
+        "template_article_3.json"
+      ]
+    },
+    {
+      "name": "voyage",
+      "couleur":"#DE31E0",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_1.json",
+        "template_article_3.json",
+        "template_article_2.json"
+      ]
+    },
+    {
+      "name": "divertissement",
+      "couleur":"#E03194",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_1.json",
+        "template_article_3.json",
+        "template_article_2.json"
+      ]
+    },
+    {
+      "name": "etude",
+      "couleur":"#E03155",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_1.json",
+        "template_article_3.json",
+        "template_article_2.json"
+      ]
+    },
+    {
+      "name": "sante",
+      "couleur":"#31E0A2",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_1.json",
+        "template_article_3.json",
+        "template_article_2.json"
+      ]
+    },
+    {
+      "name": "economie",
+      "couleur":"#53E031",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_1.json",
+        "template_article_3.json",
+        "template_article_2.json"
+      ]
+    },
+    {
+      "name": "sport",
+      "couleur":"#E0D031",
+      "resume":"",
+      "url":"",
+      "liste": [
+        "template_article_1.json",
+        "template_article_3.json",
+        "template_article_2.json"
+      ]
+    }
+  ],
+  "principal": [
+    { "categorie": "technologie", "url": "template_article_1.json" },
+    { "categorie": "sante", "url": "template_article_1.json" },
+    { "categorie": "sport", "url": "template_article_1.json" },
+    { "categorie": "technologie", "url": "template_article_1.json" },
+    { "categorie": "sport", "url": "template_article_1.json" },
+    { "categorie": "voyage", "url": "template_article_1.json" }
+  ]
+}

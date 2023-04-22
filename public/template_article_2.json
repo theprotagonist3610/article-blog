@@ -1,0 +1,41 @@
+{
+    "titre": "Certificat d’économies d’énergies : qu’est-ce que c’est ?",
+    "introduction":"Le Certificat d’économies d’énergies représente un dispositif mis en place en juillet 2005 avec la loi POPE. Il s’agit d’une aide attribuée aux particuliers et les entreprises qui souhaitent réaliser des travaux énergétiques visant la maitrise de leur consommation énergétique. L’aide peut prendre diverses formes (réduction, prime, bon d’achat…) selon le fournisseur d’énergie. Voici un article pour en savoir plus sur les primes CEE pour entreprise.",
+    "img": "",
+    "contenu": [
+      {
+        "titre": "Quel est le rôle des CEE ?",
+        "contenu": "Les CEE ont été mises en place en France dans le cadre de l’application des accords de Kyoto sur la diminution des gaz à effet de serre. Cette mesure environnementale a pour objectif de limiter le réchauffement climatique. Elle vise aussi à amener les particuliers et les entreprises à effectuer des économies d’énergie. Pour ce faire, les acteurs du système énergétique français encouragent les consommateurs en leur offrant des primes ou des réductions. L’objectif général de ce dispositif est d’atteindre les objectifs environnementaux définis par les politiques européennes ou mondiales."
+      },
+      {
+        "titre": "Le fonctionnement du CEE",
+        "contenu": "L’État attribut les CEE à deux types de personnes : les obligés et les éligibles."
+      },
+      {
+        "titre": "Les obligés",
+        "contenu": "Il s’agit des entreprises qui doivent présenter un nombre donné de CEE à la fin d’une période donnée pour prouver leur engagement en vue d’économiser l’énergie. C’est l’État qui leur fixe leurs objectifs. Ils sont sanctionnés lorsque le nombre de certificats présentés à la fin du contrat est insuffisant."
+      },
+      {
+        "titre": "Les éligibles",
+        "contenu": "Les éligibles sont libres de réaliser des travaux d’économies d’énergie. Cependant, ils peuvent obtenir des CEE s’ils décident d’effectuer ces opérations. Ils pourront alors revendre les certificats aux obligés afin d’atteindre leur objectif. La catégorie des éligibles est constituée des collectivités publiques, de l’Agence Nationale de l’Habitat (ANAH), de certains organismes et des sociétés d’économie mixte. En ce qui concerne les particuliers, le dispositif s’adresse surtout aux éco-primes ou primes éco-énergie. Ils peuvent bénéficier d’une prime CEE pour réaliser les travaux de réduction de consommation d’énergie."
+      },
+      {
+        "titre": "Qui peut bénéficier des CEE ?",
+        "contenu": "Les CEE sont accessibles aux locataires, aux bailleurs, aux propriétaires qui souhaitent réaliser des travaux d’économies d’énergie. Ils doivent remplir deux conditions : La construction de leur logement doit être achevée au moins 2 ans avant la date de début des opérations d’économies d’énergie ; Leur logement doit être situé en France métropolitaine."
+      },
+      {
+        "titre": "Pourquoi parle-t-on de système gagnant-gagnant ?",
+        "contenu": "Le dispositif CEE est considéré comme un système gagnant-gagnant. En effet, il permet aux fournisseurs d’énergie d’avoir des CEE chez leurs clients. Ces derniers leur revendent les CEE qu’ils ont eues grâce à des travaux de rénovation énergétique.Le dispositif CEE permet aux éligibles de réaliser des économies considérables sur leurs factures d’énergie. Ils optimisent aussi leur confort de vie grâce à une meilleure isolation des murs, des fenêtres et des procédés de chauffages."
+      }
+    ],
+    "auteur": "",
+    "creation": "27 février 2023",
+    "nbre_lu": "8",
+    "like": "12",
+    "commentaires": [
+      { "pseudo": "boss", "creation": "23 Janvier 2023", "like": "23" },
+      { "pseudo": "grand@chef", "creation": "7 Mars 2023", "like": "4" },
+      { "pseudo": "pulvinar@123", "creation": "8 Mars 2023", "like": "234" },
+      { "pseudo": "pascal@grand", "creation": "9 Mars 2023S", "like": "1" }
+    ]
+  }
