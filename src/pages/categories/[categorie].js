@@ -423,7 +423,6 @@ export async function getStaticProps({ params }) {
     });
     return response;
   })();
-
   return {
     props: {
       data: {

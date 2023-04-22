@@ -283,7 +283,7 @@ export default function Contact() {
                     justifyItems: "center",
                   }}
                 >
-                  Entrez le nom de l'auteur
+                  Entrez le nom de lauteur
                 </div>
                 <div
                   style={{ display: "grid", gridTemplateColumns: "80% 20%" }}
@@ -822,7 +822,7 @@ export default function Contact() {
             <div id="edit-field">
               <div id="edit-author">
                 <div id="edit-header">
-                  Entrez ou selectionnez le nom de l'auteur
+                  Entrez ou selectionnez le nom de lauteur
                 </div>
                 <div id="edit-textArea">
                   {!validAuteur ? (
@@ -1073,7 +1073,7 @@ export default function Contact() {
                   <div
                     style={{ textAlign: "center", textDecoration: "underline" }}
                   >
-                    Resume de l'article
+                    Resume de larticle
                   </div>
                   <div style={{ padding: "5px" }}>{resume}</div>
                 </div>
