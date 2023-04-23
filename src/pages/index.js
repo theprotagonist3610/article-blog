@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
+import { liste as json_map } from "../../public/articles/db_map.json";
+import { liste as article_map } from "../../public/articles/articles.json";
 const inter = Inter({ subsets: ["latin"] });
 export default function Home({ categories, all }) {
   let [searchWord, setSearchWord] = useState("");
@@ -29,6 +31,7 @@ export default function Home({ categories, all }) {
     }
     return res;
   };
+  console.log(categories);
   let [phoneOnglets, setPhoneOnglets] = useState(false);
   let [phoneSearchOnglet, setPhoneSearchOnglet] = useState(false);
   return (
@@ -299,16 +302,16 @@ export default function Home({ categories, all }) {
                   </div>
                   <div className="categorie-resume-principal-front">
                     <div className="resume-titre">
-                      {categorie.liste[0].titre}
+                      {categorie.liste[0].data.titre}
                     </div>
                     <div className="resume-resume">
-                      {categorie.liste[0].resume}
+                      {categorie.liste[0].data.resume}
                     </div>
                     <div className="resume-author">
-                      {categorie.liste[0].author}
+                      {categorie.liste[0].data.author}
                     </div>
                     <div className="resume-date">
-                      {categorie.liste[0].datestamp}
+                      {categorie.liste[0].data.datestamp}
                     </div>
                   </div>
                 </div>
@@ -454,16 +457,16 @@ export default function Home({ categories, all }) {
                       </div>
                       <div className="categorie-resume-principal-front">
                         <div className="resume-titre">
-                          {categorie.liste[0].titre}
+                          {categorie.liste[0].data.titre}
                         </div>
                         <div className="resume-resume">
-                          {categorie.liste[0].resume}
+                          {categorie.liste[0].data.resume}
                         </div>
                         <div className="resume-date">
-                          {categorie.liste[0].datestamp}
+                          {categorie.liste[0].data.datestamp}
                         </div>
                         <div className="resume-author">
-                          {categorie.liste[0].author}
+                          {categorie.liste[0].data.author}
                         </div>
                       </div>
                     </div>
@@ -485,12 +488,14 @@ export default function Home({ categories, all }) {
                             }}
                           ></div>
                           <div className="other-resume-details">
-                            <div className="other-resume-titre">{el.titre}</div>
+                            <div className="other-resume-titre">
+                              {el.data.titre}
+                            </div>
                             <div className="other-resume-author">
-                              {el.author}
+                              {el.data.auteur}
                             </div>
                             <div className="other-resume-date">
-                              {el.datestamp}
+                              {el.data.datestamp}
                             </div>
                           </div>
                         </div>
@@ -542,50 +547,31 @@ function extractData(data) {
     titre: data.titre,
   };
 }
-export async function getServerSideProps() {
-  let { liste } = await (
-    await fetch(`${process.env.URL}articles/map.json`)
-  ).json();
-  let Map = liste;
-  console.log(liste);
-  let all = await (async () => {
-    let liste = [];
-    for (let i = 0; i < Map.length; i++) {
-      let x = `${process.env.URL}articles/${Map[i]}.json`;
-      let { data } = await (await fetch(x)).json();
-      liste.push({
-        url: Map[i],
-        ...extractData(data),
-      });
-    }
+function getAllData() {
+  let all = (() => {
+    let liste = [...article_map],
+      list = [];
     for (let i = 0; i < liste.length; i++) {
-      let temp = 0;
+      let tp = null;
       for (let j = 0; j < liste.length - 1; j++) {
-        if (liste[j].datestamp < liste[j + 1].datestamp) {
-          temp = liste[j];
+        if (liste[j].article.datestamp < liste[j + 1].article.datestamp) {
+          tp = liste[j];
           liste[j] = liste[j + 1];
-          liste[j + 1] = temp;
+          liste[j + 1] = tp;
         }
       }
     }
-    return liste;
+    liste.map((el) => list.push({ url: el.code, ...el.article }));
+    return list;
   })();
-  let content = await (async () => {
+  let content = (() => {
     let liste = [];
-    for (let i = 0; i < Map.length; i++) {
-      let { data } = await (
-        await fetch(`${process.env.URL}articles/${Map[i]}.json`)
-      ).json();
-      liste.push(extractData(data));
-    }
+    all.map((el) => liste.push(extractData(el)));
     return liste;
   })();
-  for (let i = 0; i < Map.length; i++) {
-    Map[i] = { url: Map[i], ...content[i] };
-  }
   let categories = (() => {
     let data = [];
-    Map.map((el) => data.push(el.url.split("__")[0]));
+    all.map((el) => data.push(el.url.split("__")[0]));
     let res = [];
     new Set(data).forEach((val) => res.push(val));
     return res;
@@ -595,35 +581,114 @@ export async function getServerSideProps() {
       response = [];
     let data = [];
     res.map((el) => {
-      Map.map((e) => new RegExp(el).test(e.url) && data.push(e));
+      all.map((e) => new RegExp(el).test(e.url) && data.push(e));
       response.push({ categorie: el, liste: data });
       data = [];
     });
     return response;
   })();
-  let a_la_une = (() => {
-    let liste = [],
-      temp = 0;
-    Map.map((el) => liste.push([el, parseInt(el.url.split("__")[2])]));
-    for (let i = 0; i < liste.length; i++) {
-      for (let j = 0; j < liste.length - 1; j++) {
-        if (liste[j][1] < liste[j + 1][1]) {
-          temp = liste[j];
-          liste[j] = liste[j + 1];
-          liste[j + 1] = temp;
-        }
-      }
-    }
-    let list = [];
-    liste.map((el) => list.push(el[0]));
-    return list;
-  })();
-  articles_by_categorie.unshift({ categorie: "A la Une", liste: a_la_une });
-  console.log(articles_by_categorie[0]);
+  return {
+    all,
+    articles_by_categorie,
+    content,
+    categories,
+  };
+}
+export async function getStaticProps() {
+  let datas = getAllData();
   return {
     props: {
-      categories: articles_by_categorie,
-      all: all,
+      categories: datas.articles_by_categorie,
+      all: (() => {
+        let res = [];
+        datas.all.map((el) => res.push({ url: el.url, ...el.data }));
+        return res;
+      })(),
     },
   };
 }
+// export async function getServerSideProps() {
+//   let { liste } = await (
+//     await fetch(`${process.env.URL}articles/map.json`)
+//   ).json();
+//   let Map = liste;
+//   console.log(liste);
+//   let all = await (async () => {
+//     let liste = [];
+//     for (let i = 0; i < Map.length; i++) {
+//       let x = `${process.env.URL}articles/${Map[i]}.json`;
+//       let { data } = await (await fetch(x)).json();
+//       liste.push({
+//         url: Map[i],
+//         ...extractData(data),
+//       });
+//     }
+//     for (let i = 0; i < liste.length; i++) {
+//       let temp = 0;
+//       for (let j = 0; j < liste.length - 1; j++) {
+//         if (liste[j].datestamp < liste[j + 1].datestamp) {
+//           temp = liste[j];
+//           liste[j] = liste[j + 1];
+//           liste[j + 1] = temp;
+//         }
+//       }
+//     }
+//     return liste;
+//   })();
+//   let content = await (async () => {
+//     let liste = [];
+//     for (let i = 0; i < Map.length; i++) {
+//       let { data } = await (
+//         await fetch(`${process.env.URL}articles/${Map[i]}.json`)
+//       ).json();
+//       liste.push(extractData(data));
+//     }
+//     return liste;
+//   })();
+//   for (let i = 0; i < Map.length; i++) {
+//     Map[i] = { url: Map[i], ...content[i] };
+//   }
+//   let categories = (() => {
+//     let data = [];
+//     Map.map((el) => data.push(el.url.split("__")[0]));
+//     let res = [];
+//     new Set(data).forEach((val) => res.push(val));
+//     return res;
+//   })();
+//   let articles_by_categorie = (() => {
+//     let res = categories,
+//       response = [];
+//     let data = [];
+//     res.map((el) => {
+//       Map.map((e) => new RegExp(el).test(e.url) && data.push(e));
+//       response.push({ categorie: el, liste: data });
+//       data = [];
+//     });
+//     return response;
+//   })();
+//   let a_la_une = (() => {
+//     let liste = [],
+//       temp = 0;
+//     Map.map((el) => liste.push([el, parseInt(el.url.split("__")[2])]));
+//     for (let i = 0; i < liste.length; i++) {
+//       for (let j = 0; j < liste.length - 1; j++) {
+//         if (liste[j][1] < liste[j + 1][1]) {
+//           temp = liste[j];
+//           liste[j] = liste[j + 1];
+//           liste[j + 1] = temp;
+//         }
+//       }
+//     }
+//     let list = [];
+//     liste.map((el) => list.push(el[0]));
+//     return list;
+//   })();
+//   articles_by_categorie.unshift({ categorie: "A la Une", liste: a_la_une });
+//   console.log(articles_by_categorie[0]);
+//   return {
+//     props: {
+//       categories: articles_by_categorie,
+//       all: all,
+//     },
+//   };
+// }
