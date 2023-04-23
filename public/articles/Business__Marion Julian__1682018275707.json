@@ -1,1 +1,18 @@
-{"datestamp":1682018275707,"auteur":"Marion Julian","categorie":"Business","titre":"Définition : G to G (ou G2G)","resume":"Le terme G to G (G2G) fait référence aux transactions commerciales qui ont lieu entre deux entités gouvernementales. Ce type de commerce est également connu sous le nom de commerce électronique gouvernemental (Gov2Gov). +","sections":[{"titre":"Les transactions G2G peuvent inclure l’achat de biens ou de services entre des agences gouvernementales","valide":true,"paragraphes":["la gestion des relations entre les gouvernements locaux et nationaux, la coordination des services publics, etc. Les systèmes G2G sont souvent utilisés pour améliorer l’efficacité des processus gouvernementaux, réduire les coûts et faciliter la communication et la collaboration entre les différents niveaux de gouvernement."]}]}
+{
+  "data": {
+    "datestamp": 1682018275707,
+    "auteur": "Marion Julian",
+    "categorie": "Business",
+    "titre": "Définition : G to G (ou G2G)",
+    "resume": "Le terme G to G (G2G) fait référence aux transactions commerciales qui ont lieu entre deux entités gouvernementales. Ce type de commerce est également connu sous le nom de commerce électronique gouvernemental (Gov2Gov). +",
+    "sections": [
+      {
+        "titre": "Les transactions G2G peuvent inclure l’achat de biens ou de services entre des agences gouvernementales",
+        "valide": true,
+        "paragraphes": [
+          "la gestion des relations entre les gouvernements locaux et nationaux, la coordination des services publics, etc. Les systèmes G2G sont souvent utilisés pour améliorer l’efficacité des processus gouvernementaux, réduire les coûts et faciliter la communication et la collaboration entre les différents niveaux de gouvernement."
+        ]
+      }
+    ]
+  }
+}

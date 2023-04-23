@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import { useState } from "react";
+import { liste as json_map } from "../../../public/articles/db_map.json";
+import { liste as article_map } from "../../../public/articles/articles.json";
 export default function Categories({ data, categories, all }) {
   let [searchWord, setSearchWord] = useState("");
   let [searchList, setSearchList] = useState([...all]);
@@ -248,7 +250,7 @@ export default function Categories({ data, categories, all }) {
               {categories.map((el, index) => (
                 <div key={index}>
                   <a
-                    href={`http://localhost:3000/categories/${el.categorie}`}
+                    href={`/categories/${el.categorie}`}
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
                     {el.categorie}
@@ -273,7 +275,7 @@ export default function Categories({ data, categories, all }) {
                   <div key={index} className="categorie-content">
                     <div className="categorie-content-img">
                       <img
-                        src="http://localhost:3000/img/img3.jpg"
+                        src="/img/img3.jpg"
                         width={"100%"}
                         height={"100%"}
                       ></img>
@@ -287,11 +289,11 @@ export default function Categories({ data, categories, all }) {
                       </div>
                       <div className="categorie-content-details-bottom">
                         <div className="categorie-content-details-author">
-                          {el.author}
+                          {el.auteur}
                         </div>
                         <div className="categorie-content-details-read">
                           <a
-                            href={`http://localhost:3000/articles/${el.url}`}
+                            href={`/articles/${el.url}`}
                             style={{ textDecoration: "none", color: "inherit" }}
                           >
                             Lire
@@ -321,7 +323,7 @@ export default function Categories({ data, categories, all }) {
                     {searchList.map((el, index) => (
                       <div key={index} className="liste-titre">
                         <a
-                          href={`http://localhost:3000/articles/${el.url}`}
+                          href={`/articles/${el.url}`}
                           style={{ textDecoration: "none", color: "inherit" }}
                         >
                           {el.titre}
@@ -338,7 +340,6 @@ export default function Categories({ data, categories, all }) {
     </>
   );
 }
-
 function extractData(data) {
   return {
     categorie: data.categorie,
@@ -348,10 +349,56 @@ function extractData(data) {
     titre: data.titre,
   };
 }
+function getAllData() {
+  let all = (() => {
+    let liste = [...article_map],
+      list = [];
+    for (let i = 0; i < liste.length; i++) {
+      let tp = null;
+      for (let j = 0; j < liste.length - 1; j++) {
+        if (liste[j].article.datestamp < liste[j + 1].article.datestamp) {
+          tp = liste[j];
+          liste[j] = liste[j + 1];
+          liste[j + 1] = tp;
+        }
+      }
+    }
+    liste.map((el) => list.push({ url: el.code, ...el.article }));
+    return list;
+  })();
+  let content = (() => {
+    let liste = [];
+    all.map((el) => liste.push(extractData(el)));
+    return liste;
+  })();
+  let categories = (() => {
+    let data = [];
+    all.map((el) => data.push(el.url.split("__")[0]));
+    let res = [];
+    new Set(data).forEach((val) => res.push(val));
+    return res;
+  })();
+  let articles_by_categorie = (() => {
+    let res = categories,
+      response = [];
+    let data = [];
+    res.map((el) => {
+      all.map((e) => new RegExp(el).test(e.url) && data.push(e.data));
+      response.push({ categorie: el, liste: data });
+      data = [];
+    });
+    return response;
+  })();
+  return {
+    all,
+    articles_by_categorie,
+    content,
+    categories,
+  };
+}
 export async function getStaticPaths() {
-  let Map = await (
-    await fetch("http://localhost:3000/articles/map.json")
-  ).json();
+  let { liste } = await import(`../../../public/articles/map.json`);
+  let Map = liste;
   let pathsList = [],
     list = [];
   Map.map((el) => pathsList.push({ params: { categorie: el.split("__")[0] } }));
@@ -362,74 +409,14 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params }) {
-  let Map = await (
-    await fetch("http://localhost:3000/articles/map.json")
-  ).json();
-  let all = await (async () => {
-    let liste = [];
-    for (let i = 0; i < Map.length; i++) {
-      liste.push({
-        url: Map[i],
-        ...extractData(
-          await (
-            await fetch(`http://localhost:3000/articles/${Map[i]}.json`)
-          ).json()
-        ),
-      });
-    }
-    for (let i = 0; i < liste.length; i++) {
-      let temp = 0;
-      for (let j = 0; j < liste.length - 1; j++) {
-        if (liste[j].datestamp < liste[j + 1].datestamp) {
-          temp = liste[j];
-          liste[j] = liste[j + 1];
-          liste[j + 1] = temp;
-        }
-      }
-    }
-    return liste;
-  })();
-  let content = await (async () => {
-    let liste = [];
-    for (let i = 0; i < Map.length; i++) {
-      liste.push(
-        extractData(
-          await (
-            await fetch(`http://localhost:3000/articles/${Map[i]}.json`)
-          ).json()
-        )
-      );
-    }
-    return liste;
-  })();
-  for (let i = 0; i < Map.length; i++) {
-    Map[i] = { url: Map[i], ...content[i] };
-  }
-  let categories = (() => {
-    let data = [];
-    Map.map((el) => data.push(el.url.split("__")[0]));
-    let res = [];
-    new Set(data).forEach((val) => res.push(val));
-    return res;
-  })();
-  let articles_by_categorie = (() => {
-    let res = categories,
-      response = [];
-    let data = [];
-    res.map((el) => {
-      Map.map((e) => new RegExp(el).test(e.url) && data.push(e));
-      response.push({ categorie: el, liste: data });
-      data = [];
-    });
-    return response;
-  })();
+  let datas = getAllData();
   return {
     props: {
       data: {
         name: params.categorie,
         liste: (() => {
           let res = null;
-          articles_by_categorie.map((el) => {
+          datas.articles_by_categorie.map((el) => {
             if (el.categorie === params.categorie) {
               res = el.liste;
             }
@@ -437,8 +424,12 @@ export async function getStaticProps({ params }) {
           return res;
         })(),
       },
-      categories: articles_by_categorie,
-      all: all,
+      categories: datas.articles_by_categorie,
+      all: (() => {
+        let res = [];
+        datas.all.map((el) => res.push({ url: el.url, ...el.data }));
+        return res;
+      })(),
     },
   };
 }

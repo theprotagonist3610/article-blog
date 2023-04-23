@@ -1,0 +1,343 @@
+{
+  "liste": [
+    {
+      "code": "Business__Alexandre HOUNKPEVI__1682018998238",
+      "article": {
+        "data": {
+          "datestamp": 1682018998238,
+          "auteur": "Alexandre HOUNKPEVI",
+          "categorie": "Business",
+          "titre": "Que signifie CSR (Corporate social responsability) ?",
+          "resume": "CSR est un sigle anglo-saxon utilisé en entreprise pour désigner la responsabilité sociale des entreprises. Il désigne une démarche consistant à intégrer les enjeux sociaux et environnementaux dans leur prise de décision. Il renvoie aussi à l’obligation éthique et morale des sociétés dans leurs relations avec leurs salariés, l’économie et d’autres domaines liés au fonctionnement de la structure. Voici plus d’information sur la définition, les origines et des exemples de CSR.",
+          "sections": [
+            {
+              "titre": "CSR : qu’est-ce que c’est ?",
+              "valide": true,
+              "paragraphes": [
+                "<strong></strong>",
+                "À noter que les entreprises sont libres de mettre en place le CSR. Toutefois, les entreprises qui agissent de manière responsable et morale bénéficient d’une bonne image auprès du public et de l’État."
+              ]
+            },
+            {
+              "titre": "Origines de la CSR",
+              "valide": true,
+              "paragraphes": [
+                "Le terme CSR a été utilisé pour la première fois en 1953 par Howard Bowen. D’autres experts comme Lecompte et Valette-Florence l’ont aussi utilisé pour désigner la consommation responsable des clients. Selon eux, l’achat demeure le seul moyen pour les consommateurs d’exprimer leurs convictions et valeurs.",
+                "Une entreprise étant membre de la société, a donc des obligations envers ses employés, ses clients et ses partenaires financiers. De fait, ses décisions doivent avoir un impact positif sur l’environnement, l’éthique et la société.",
+                "En France, c’est la norme ISO 26000 qui régit la RSE. Elle s’articule autour de sept points à savoir :",
+                "Droits de l’homme ;\nDéveloppement local ;\nConsidération des consommateurs ;\nTransparence des pratiques ;\nConditions de travail ;\nGouvernance de l’organisation ;\nConsidération de l’environnement.\nLes piliers de la CSR"
+              ]
+            },
+            {
+              "titre": "Les piliers de la CSR",
+              "valide": true,
+              "paragraphes": [
+                "La Corporate Social Responsability est subdivisée en quatre grands domaines. Elle peut varier selon la nature de l’activité de la société.",
+                ""
+              ]
+            },
+            {
+              "titre": "La responsabilité environnementale",
+              "valide": false,
+              "paragraphes": [
+                "La responsabilité environnementale est un pilier de la RSE, car les questions environnementales influencent le comportement des consommateurs. C’est pourquoi les entreprises mettent désormais en place des stratégies pour :",
+                "Réduire la pollution ;\nRecycler les déchets ;\nOptimiser la consommation d’énergie et de ressources naturelles ;\nPrioriser le commerce équitable et le cycle court ;\nVendre des produits en adéquation avec ces valeurs."
+              ]
+            },
+            {
+              "titre": "La responsabilité éthique",
+              "valide": false,
+              "paragraphes": [
+                "Les entreprises qui mettent en place la RSE s’engagent à agir de manière éthique et juste envers les consommateurs et les partenaires. Elles s’engagent aussi à bannir toute forme de discrimination."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "Business__Marion Julian__1682018275707",
+      "article": {
+        "data": {
+          "datestamp": 1682018275707,
+          "auteur": "Marion Julian",
+          "categorie": "Business",
+          "titre": "Définition : G to G (ou G2G)",
+          "resume": "Le terme G to G (G2G) fait référence aux transactions commerciales qui ont lieu entre deux entités gouvernementales. Ce type de commerce est également connu sous le nom de commerce électronique gouvernemental (Gov2Gov). +",
+          "sections": [
+            {
+              "titre": "Les transactions G2G peuvent inclure l’achat de biens ou de services entre des agences gouvernementales",
+              "valide": true,
+              "paragraphes": [
+                "la gestion des relations entre les gouvernements locaux et nationaux, la coordination des services publics, etc. Les systèmes G2G sont souvent utilisés pour améliorer l’efficacité des processus gouvernementaux, réduire les coûts et faciliter la communication et la collaboration entre les différents niveaux de gouvernement."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "Business__Marion Julian__1682018492726",
+      "article": {
+        "data": {
+          "datestamp": 1682018492726,
+          "auteur": "Marion Julian",
+          "categorie": "Business",
+          "titre": "Définition : bon de livraison (BL)",
+          "resume": "Un bon de livraison ou BL est un document commercial qui atteste de la livraison d’un produit ou d’une marchandise à un client ou à un destinataire spécifique. Il contient des informations clés telles que le nom et l’adresse du client, le nom du fournisseur ou du vendeur, la description de la marchandise livrée, la quantité, le prix unitaire et le montant total.",
+          "sections": [
+            {
+              "titre": "Le bon de livraison est généralement émis",
+              "valide": true,
+              "paragraphes": [
+                "Le bon de livraison est généralement émis par le fournisseur ou le vendeur lors de la remise de la marchandise au client ou au destinataire. Il peut être utilisé comme preuve de la livraison en cas de litige ou de réclamation de la part du client."
+              ]
+            },
+            {
+              "titre": "En outre",
+              "valide": true,
+              "paragraphes": [
+                "En outre, le bon de livraison peut également être utilisé comme une pièce justificative pour la comptabilité de l’entreprise. Il permet de suivre les stocks, les ventes et les livraisons de marchandises."
+              ]
+            },
+            {
+              "titre": "Le bon de livraison est un document commercial",
+              "valide": true,
+              "paragraphes": [
+                "Le bon de livraison est un document commercial essentiel pour attester de la livraison de marchandises à un client ou à un destinataire spécifique. Il fournit des informations clés sur la marchandise livrée et peut être utilisé comme preuve de livraison en cas de litige ou de réclamation."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "Digital__Alexandre HOUNKPEVI__1682013998238",
+      "article": {
+        "data": {
+          "datestamp": 1682018998238,
+          "auteur": "Alexandre HOUNKPEVI",
+          "categorie": "Business",
+          "titre": "Que signifie CSR (Corporate social responsability) ?",
+          "resume": "CSR est un sigle anglo-saxon utilisé en entreprise pour désigner la responsabilité sociale des entreprises. Il désigne une démarche consistant à intégrer les enjeux sociaux et environnementaux dans leur prise de décision. Il renvoie aussi à l’obligation éthique et morale des sociétés dans leurs relations avec leurs salariés, l’économie et d’autres domaines liés au fonctionnement de la structure. Voici plus d’information sur la définition, les origines et des exemples de CSR.",
+          "sections": [
+            {
+              "titre": "CSR : qu’est-ce que c’est ?",
+              "valide": true,
+              "paragraphes": [
+                "<strong></strong>",
+                "À noter que les entreprises sont libres de mettre en place le CSR. Toutefois, les entreprises qui agissent de manière responsable et morale bénéficient d’une bonne image auprès du public et de l’État."
+              ]
+            },
+            {
+              "titre": "Origines de la CSR",
+              "valide": true,
+              "paragraphes": [
+                "Le terme CSR a été utilisé pour la première fois en 1953 par Howard Bowen. D’autres experts comme Lecompte et Valette-Florence l’ont aussi utilisé pour désigner la consommation responsable des clients. Selon eux, l’achat demeure le seul moyen pour les consommateurs d’exprimer leurs convictions et valeurs.",
+                "Une entreprise étant membre de la société, a donc des obligations envers ses employés, ses clients et ses partenaires financiers. De fait, ses décisions doivent avoir un impact positif sur l’environnement, l’éthique et la société.",
+                "En France, c’est la norme ISO 26000 qui régit la RSE. Elle s’articule autour de sept points à savoir :",
+                "Droits de l’homme ;\nDéveloppement local ;\nConsidération des consommateurs ;\nTransparence des pratiques ;\nConditions de travail ;\nGouvernance de l’organisation ;\nConsidération de l’environnement.\nLes piliers de la CSR"
+              ]
+            },
+            {
+              "titre": "Les piliers de la CSR",
+              "valide": true,
+              "paragraphes": [
+                "La Corporate Social Responsability est subdivisée en quatre grands domaines. Elle peut varier selon la nature de l’activité de la société.",
+                ""
+              ]
+            },
+            {
+              "titre": "La responsabilité environnementale",
+              "valide": false,
+              "paragraphes": [
+                "La responsabilité environnementale est un pilier de la RSE, car les questions environnementales influencent le comportement des consommateurs. C’est pourquoi les entreprises mettent désormais en place des stratégies pour :",
+                "Réduire la pollution ;\nRecycler les déchets ;\nOptimiser la consommation d’énergie et de ressources naturelles ;\nPrioriser le commerce équitable et le cycle court ;\nVendre des produits en adéquation avec ces valeurs."
+              ]
+            },
+            {
+              "titre": "La responsabilité éthique",
+              "valide": false,
+              "paragraphes": [
+                "Les entreprises qui mettent en place la RSE s’engagent à agir de manière éthique et juste envers les consommateurs et les partenaires. Elles s’engagent aussi à bannir toute forme de discrimination."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "Digital__Marion Julian__1682019363239",
+      "article": {
+        "data": {
+          "datestamp": 1682019363239,
+          "auteur": "Marion Julian",
+          "categorie": "Digital",
+          "titre": "Qu’est-ce que la Y génération ?",
+          "resume": "La « Génération Y », également appelée « Millennials« , est un groupe de personnes nées entre les années 1980 et le début des années 2000. Cette génération a grandi avec l’avènement de la technologie numérique et de l’internet. Ils sont donc très à l’aise avec les ordinateurs, les téléphones portables et les réseaux sociaux.",
+          "sections": [
+            {
+              "titre": "Les membres de la Génération Y",
+              "valide": false,
+              "paragraphes": [
+                "Les membres de la Génération Y ont été influencés par des événements tels que la récession économique, les attentats terroristes du 11 septembre et la guerre en Irak. Ces événements ont eu un impact important sur leur façon de penser et de voir le monde.",
+                "Les Millennials sont souvent considérés comme étant très ouverts d’esprit, inclusifs et soucieux de l’environnement. Ils sont également très orientés vers la collaboration et préfèrent travailler en équipe plutôt que de manière autonome. Cette génération a une forte aversion pour les hiérarchies rigides et les structures organisationnelles traditionnelles."
+              ]
+            },
+            {
+              "titre": "La Génération Y a également des attentes",
+              "valide": false,
+              "paragraphes": [
+                "La Génération Y a également des attentes élevées en matière de travail et de vie personnelle. Ils cherchent un équilibre entre les deux et sont souvent prêts à sacrifier leur temps et leur énergie pour poursuivre leur passion. Ils ont également une forte préférence pour les emplois qui ont un sens et qui ont un impact positif sur la société.",
+                "Enfin, les Millennials sont très attachés à la technologie et sont souvent considérés comme étant constamment connectés. Ils sont également très adeptes de la consommation collaborative, de la location plutôt que de l’achat et de l’utilisation de produits écologiques.",
+                "En somme, la Génération Y est un groupe de personnes qui a grandi dans un monde en constante évolution technologique et sociétale. Ils ont des attentes élevées en matière de travail et de vie personnelle et sont très soucieux de l’environnement et de la durabilité. Ils sont souvent considérés comme étant ouverts d’esprit, inclusifs et collaboratifs."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "Jeunesse__Alexandre HOUNKPEVI__1682014275707",
+      "article": {
+        "data": {
+          "datestamp": 1682018275707,
+          "auteur": "Marion Julian",
+          "categorie": "Business",
+          "titre": "Définition : G to G (ou G2G)",
+          "resume": "Le terme G to G (G2G) fait référence aux transactions commerciales qui ont lieu entre deux entités gouvernementales. Ce type de commerce est également connu sous le nom de commerce électronique gouvernemental (Gov2Gov). +",
+          "sections": [
+            {
+              "titre": "Les transactions G2G peuvent inclure l’achat de biens ou de services entre des agences gouvernementales",
+              "valide": true,
+              "paragraphes": [
+                "la gestion des relations entre les gouvernements locaux et nationaux, la coordination des services publics, etc. Les systèmes G2G sont souvent utilisés pour améliorer l’efficacité des processus gouvernementaux, réduire les coûts et faciliter la communication et la collaboration entre les différents niveaux de gouvernement."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "Jeunesse__Marion Julian__1682019363439",
+      "article": {
+        "data": {
+          "datestamp": 1682019363239,
+          "auteur": "Marion Julian",
+          "categorie": "Digital",
+          "titre": "Qu’est-ce que la Y génération ?",
+          "resume": "La « Génération Y », également appelée « Millennials« , est un groupe de personnes nées entre les années 1980 et le début des années 2000. Cette génération a grandi avec l’avènement de la technologie numérique et de l’internet. Ils sont donc très à l’aise avec les ordinateurs, les téléphones portables et les réseaux sociaux.",
+          "sections": [
+            {
+              "titre": "Les membres de la Génération Y",
+              "valide": false,
+              "paragraphes": [
+                "Les membres de la Génération Y ont été influencés par des événements tels que la récession économique, les attentats terroristes du 11 septembre et la guerre en Irak. Ces événements ont eu un impact important sur leur façon de penser et de voir le monde.",
+                "Les Millennials sont souvent considérés comme étant très ouverts d’esprit, inclusifs et soucieux de l’environnement. Ils sont également très orientés vers la collaboration et préfèrent travailler en équipe plutôt que de manière autonome. Cette génération a une forte aversion pour les hiérarchies rigides et les structures organisationnelles traditionnelles."
+              ]
+            },
+            {
+              "titre": "La Génération Y a également des attentes",
+              "valide": false,
+              "paragraphes": [
+                "La Génération Y a également des attentes élevées en matière de travail et de vie personnelle. Ils cherchent un équilibre entre les deux et sont souvent prêts à sacrifier leur temps et leur énergie pour poursuivre leur passion. Ils ont également une forte préférence pour les emplois qui ont un sens et qui ont un impact positif sur la société.",
+                "Enfin, les Millennials sont très attachés à la technologie et sont souvent considérés comme étant constamment connectés. Ils sont également très adeptes de la consommation collaborative, de la location plutôt que de l’achat et de l’utilisation de produits écologiques.",
+                "En somme, la Génération Y est un groupe de personnes qui a grandi dans un monde en constante évolution technologique et sociétale. Ils ont des attentes élevées en matière de travail et de vie personnelle et sont très soucieux de l’environnement et de la durabilité. Ils sont souvent considérés comme étant ouverts d’esprit, inclusifs et collaboratifs."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "Tourisme__Alexandre HOUNKPEVI__1682018788238",
+      "article": {
+        "data": {
+          "datestamp": 1682018998238,
+          "auteur": "Alexandre HOUNKPEVI",
+          "categorie": "Business",
+          "titre": "Que signifie CSR (Corporate social responsability) ?",
+          "resume": "CSR est un sigle anglo-saxon utilisé en entreprise pour désigner la responsabilité sociale des entreprises. Il désigne une démarche consistant à intégrer les enjeux sociaux et environnementaux dans leur prise de décision. Il renvoie aussi à l’obligation éthique et morale des sociétés dans leurs relations avec leurs salariés, l’économie et d’autres domaines liés au fonctionnement de la structure. Voici plus d’information sur la définition, les origines et des exemples de CSR.",
+          "sections": [
+            {
+              "titre": "CSR : qu’est-ce que c’est ?",
+              "valide": true,
+              "paragraphes": [
+                "<strong></strong>",
+                "À noter que les entreprises sont libres de mettre en place le CSR. Toutefois, les entreprises qui agissent de manière responsable et morale bénéficient d’une bonne image auprès du public et de l’État."
+              ]
+            },
+            {
+              "titre": "Origines de la CSR",
+              "valide": true,
+              "paragraphes": [
+                "Le terme CSR a été utilisé pour la première fois en 1953 par Howard Bowen. D’autres experts comme Lecompte et Valette-Florence l’ont aussi utilisé pour désigner la consommation responsable des clients. Selon eux, l’achat demeure le seul moyen pour les consommateurs d’exprimer leurs convictions et valeurs.",
+                "Une entreprise étant membre de la société, a donc des obligations envers ses employés, ses clients et ses partenaires financiers. De fait, ses décisions doivent avoir un impact positif sur l’environnement, l’éthique et la société.",
+                "En France, c’est la norme ISO 26000 qui régit la RSE. Elle s’articule autour de sept points à savoir :",
+                "Droits de l’homme ;\nDéveloppement local ;\nConsidération des consommateurs ;\nTransparence des pratiques ;\nConditions de travail ;\nGouvernance de l’organisation ;\nConsidération de l’environnement.\nLes piliers de la CSR"
+              ]
+            },
+            {
+              "titre": "Les piliers de la CSR",
+              "valide": true,
+              "paragraphes": [
+                "La Corporate Social Responsability est subdivisée en quatre grands domaines. Elle peut varier selon la nature de l’activité de la société.",
+                ""
+              ]
+            },
+            {
+              "titre": "La responsabilité environnementale",
+              "valide": false,
+              "paragraphes": [
+                "La responsabilité environnementale est un pilier de la RSE, car les questions environnementales influencent le comportement des consommateurs. C’est pourquoi les entreprises mettent désormais en place des stratégies pour :",
+                "Réduire la pollution ;\nRecycler les déchets ;\nOptimiser la consommation d’énergie et de ressources naturelles ;\nPrioriser le commerce équitable et le cycle court ;\nVendre des produits en adéquation avec ces valeurs."
+              ]
+            },
+            {
+              "titre": "La responsabilité éthique",
+              "valide": false,
+              "paragraphes": [
+                "Les entreprises qui mettent en place la RSE s’engagent à agir de manière éthique et juste envers les consommateurs et les partenaires. Elles s’engagent aussi à bannir toute forme de discrimination."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "code": "Tourisme__Marion Julian__1676018492726",
+      "article": {
+        "data": {
+          "datestamp": 1682018492726,
+          "auteur": "Marion Julian",
+          "categorie": "Business",
+          "titre": "Définition : bon de livraison (BL)",
+          "resume": "Un bon de livraison ou BL est un document commercial qui atteste de la livraison d’un produit ou d’une marchandise à un client ou à un destinataire spécifique. Il contient des informations clés telles que le nom et l’adresse du client, le nom du fournisseur ou du vendeur, la description de la marchandise livrée, la quantité, le prix unitaire et le montant total.",
+          "sections": [
+            {
+              "titre": "Le bon de livraison est généralement émis",
+              "valide": true,
+              "paragraphes": [
+                "Le bon de livraison est généralement émis par le fournisseur ou le vendeur lors de la remise de la marchandise au client ou au destinataire. Il peut être utilisé comme preuve de la livraison en cas de litige ou de réclamation de la part du client."
+              ]
+            },
+            {
+              "titre": "En outre",
+              "valide": true,
+              "paragraphes": [
+                "En outre, le bon de livraison peut également être utilisé comme une pièce justificative pour la comptabilité de l’entreprise. Il permet de suivre les stocks, les ventes et les livraisons de marchandises."
+              ]
+            },
+            {
+              "titre": "Le bon de livraison est un document commercial",
+              "valide": true,
+              "paragraphes": [
+                "Le bon de livraison est un document commercial essentiel pour attester de la livraison de marchandises à un client ou à un destinataire spécifique. Il fournit des informations clés sur la marchandise livrée et peut être utilisé comme preuve de livraison en cas de litige ou de réclamation."
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

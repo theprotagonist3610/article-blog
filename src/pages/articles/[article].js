@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import { useState, useEffect } from "react";
+import { liste as json_map } from "../../../public/articles/db_map.json";
+import { liste as article_map } from "../../../public/articles/articles.json";
 export default function Article({ data, categories, all }) {
   const returnPrevNext = () => {
     let prev = null,
@@ -263,7 +265,7 @@ export default function Article({ data, categories, all }) {
               {categories.map((el, index) => (
                 <div key={index}>
                   <a
-                    href={`http://localhost:3000/categories/${el.categorie}`}
+                    href={`/categories/${el.categorie}`}
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
                     {el.categorie}
@@ -278,7 +280,7 @@ export default function Article({ data, categories, all }) {
               <div
                 id="article-header"
                 style={{
-                  background: `url("http://localhost:3000/img/img4.jpg")`,
+                  background: `url("/img/img4.jpg")`,
                   backgroundSize: "cover",
                 }}
               >
@@ -291,21 +293,21 @@ export default function Article({ data, categories, all }) {
                   <div id="article-share">
                     <div id="share-facebook">
                       <img
-                        src="http://localhost:3000/svgs/fb_icon.svg"
+                        src="/svgs/fb_icon.svg"
                         width={"25%"}
                         height={"25%"}
                       ></img>
                     </div>
                     <div id="share-twitter">
                       <img
-                        src="http://localhost:3000/svgs/twitter_icon.svg"
+                        src="/svgs/twitter_icon.svg"
                         width={"25%"}
                         height={"25%"}
                       ></img>
                     </div>
                     <div id="share-whatsapp">
                       <img
-                        src="http://localhost:3000/svgs/whatsapp_icon.svg"
+                        src="/svgs/whatsapp_icon.svg"
                         width={"25%"}
                         height={"25%"}
                       ></img>
@@ -378,9 +380,7 @@ export default function Article({ data, categories, all }) {
                     textDecoration: "none",
                     color: "inherit",
                   }}
-                  href={`http://localhost:3000/articles/${
-                    returnPrevNext().prev.url
-                  }`}
+                  href={`/articles/${returnPrevNext().prev.url}`}
                 >
                   <div
                     style={{
@@ -402,9 +402,7 @@ export default function Article({ data, categories, all }) {
                     textDecoration: "none",
                     color: "inherit",
                   }}
-                  href={`http://localhost:3000/articles/${
-                    returnPrevNext().next.url
-                  }`}
+                  href={`/articles/${returnPrevNext().next.url}`}
                 >
                   <div
                     style={{
@@ -439,7 +437,7 @@ export default function Article({ data, categories, all }) {
                 {searchList.map((el, index) => (
                   <div key={index} className="liste-titre">
                     <a
-                      href={`http://localhost:3000/articles/${el.url}`}
+                      href={`/articles/${el.url}`}
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
                       {el.titre}
@@ -463,66 +461,31 @@ function extractData(data) {
     titre: data.titre,
   };
 }
-export async function getStaticPaths() {
-  let Map = await (
-    await fetch("http://localhost:3000/articles/map.json")
-  ).json();
-  let pathsList = [];
-  Map.map((el) => pathsList.push({ params: { article: el } }));
-  console.log(pathsList);
-  return {
-    paths: pathsList,
-    fallback: false,
-  };
-}
-export async function getStaticProps({ params }) {
-  //
-  let Map = await (
-    await fetch("http://localhost:3000/articles/map.json")
-  ).json();
-  let all = await (async () => {
-    let liste = [];
-    for (let i = 0; i < Map.length; i++) {
-      liste.push({
-        url: Map[i],
-        ...extractData(
-          await (
-            await fetch(`http://localhost:3000/articles/${Map[i]}.json`)
-          ).json()
-        ),
-      });
-    }
+function getAllData() {
+  let all = (() => {
+    let liste = [...article_map],
+      list = [];
     for (let i = 0; i < liste.length; i++) {
-      let temp = 0;
+      let tp = null;
       for (let j = 0; j < liste.length - 1; j++) {
-        if (liste[j].datestamp < liste[j + 1].datestamp) {
-          temp = liste[j];
+        if (liste[j].article.datestamp < liste[j + 1].article.datestamp) {
+          tp = liste[j];
           liste[j] = liste[j + 1];
-          liste[j + 1] = temp;
+          liste[j + 1] = tp;
         }
       }
     }
-    return liste;
+    liste.map((el) => list.push({ url: el.code, ...el.article }));
+    return list;
   })();
-  let content = await (async () => {
+  let content = (() => {
     let liste = [];
-    for (let i = 0; i < Map.length; i++) {
-      liste.push(
-        extractData(
-          await (
-            await fetch(`http://localhost:3000/articles/${Map[i]}.json`)
-          ).json()
-        )
-      );
-    }
+    all.map((el) => liste.push(extractData(el)));
     return liste;
   })();
-  for (let i = 0; i < Map.length; i++) {
-    Map[i] = { url: Map[i], ...content[i] };
-  }
   let categories = (() => {
     let data = [];
-    Map.map((el) => data.push(el.url.split("__")[0]));
+    all.map((el) => data.push(el.url.split("__")[0]));
     let res = [];
     new Set(data).forEach((val) => res.push(val));
     return res;
@@ -532,38 +495,48 @@ export async function getStaticProps({ params }) {
       response = [];
     let data = [];
     res.map((el) => {
-      Map.map((e) => new RegExp(el).test(e.url) && data.push(e));
+      all.map((e) => new RegExp(el).test(e.url) && data.push(e));
       response.push({ categorie: el, liste: data });
       data = [];
     });
     return response;
   })();
-  let a_la_une = (() => {
-    let liste = [],
-      temp = 0;
-    Map.map((el) => liste.push([el, parseInt(el.url.split("__")[2])]));
-    for (let i = 0; i < liste.length; i++) {
-      for (let j = 0; j < liste.length - 1; j++) {
-        if (liste[j][1] < liste[j + 1][1]) {
-          temp = liste[j];
-          liste[j] = liste[j + 1];
-          liste[j + 1] = temp;
-        }
-      }
-    }
-    let list = [];
-    liste.map((el) => list.push(el[0]));
-    return list;
-  })();
-  //
-  let data = await (
-    await fetch(`http://localhost:3000/articles/${params.article}.json`)
-  ).json();
+  return {
+    all,
+    articles_by_categorie,
+    content,
+    categories,
+  };
+}
+export async function getStaticPaths() {
+  let { liste } = await import(`../../../public/articles/map.json`);
+  // let { liste } = await (
+  //   await fetch(`${process.env.URL}articles/map.json`)
+  // ).json();
+  let Map = liste;
+  let pathsList = [];
+  Map.map((el) => pathsList.push({ params: { article: el } }));
+  console.log(pathsList);
+  return {
+    paths: pathsList,
+    fallback: false,
+  };
+}
+export async function getStaticProps({ params }) {
+  let datas = getAllData();
+  let res = null;
+  datas.all.map((el) =>
+    el.url === params.article ? (res = { ...el.data }) : (res = res)
+  );
   return {
     props: {
-      data: { url: params.article, ...data },
-      categories: articles_by_categorie,
-      all: all,
+      data: { url: params.article, ...res },
+      categories: datas.articles_by_categorie,
+      all: (() => {
+        let res = [];
+        datas.all.map((el) => res.push({ url: el.url, ...el.data }));
+        return res;
+      })(),
     },
   };
 }

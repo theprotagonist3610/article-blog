@@ -1,1 +1,28 @@
-{"datestamp":1682019363239,"auteur":"Marion Julian","categorie":"Digital","titre":"Qu’est-ce que la Y génération ?","resume":"La « Génération Y », également appelée « Millennials« , est un groupe de personnes nées entre les années 1980 et le début des années 2000. Cette génération a grandi avec l’avènement de la technologie numérique et de l’internet. Ils sont donc très à l’aise avec les ordinateurs, les téléphones portables et les réseaux sociaux.","sections":[{"titre":"Les membres de la Génération Y","valide":false,"paragraphes":["Les membres de la Génération Y ont été influencés par des événements tels que la récession économique, les attentats terroristes du 11 septembre et la guerre en Irak. Ces événements ont eu un impact important sur leur façon de penser et de voir le monde.","Les Millennials sont souvent considérés comme étant très ouverts d’esprit, inclusifs et soucieux de l’environnement. Ils sont également très orientés vers la collaboration et préfèrent travailler en équipe plutôt que de manière autonome. Cette génération a une forte aversion pour les hiérarchies rigides et les structures organisationnelles traditionnelles."]},{"titre":"La Génération Y a également des attentes","valide":false,"paragraphes":["La Génération Y a également des attentes élevées en matière de travail et de vie personnelle. Ils cherchent un équilibre entre les deux et sont souvent prêts à sacrifier leur temps et leur énergie pour poursuivre leur passion. Ils ont également une forte préférence pour les emplois qui ont un sens et qui ont un impact positif sur la société.","Enfin, les Millennials sont très attachés à la technologie et sont souvent considérés comme étant constamment connectés. Ils sont également très adeptes de la consommation collaborative, de la location plutôt que de l’achat et de l’utilisation de produits écologiques.","En somme, la Génération Y est un groupe de personnes qui a grandi dans un monde en constante évolution technologique et sociétale. Ils ont des attentes élevées en matière de travail et de vie personnelle et sont très soucieux de l’environnement et de la durabilité. Ils sont souvent considérés comme étant ouverts d’esprit, inclusifs et collaboratifs."]}]}
+{
+  "data": {
+    "datestamp": 1682019363239,
+    "auteur": "Marion Julian",
+    "categorie": "Digital",
+    "titre": "Qu’est-ce que la Y génération ?",
+    "resume": "La « Génération Y », également appelée « Millennials« , est un groupe de personnes nées entre les années 1980 et le début des années 2000. Cette génération a grandi avec l’avènement de la technologie numérique et de l’internet. Ils sont donc très à l’aise avec les ordinateurs, les téléphones portables et les réseaux sociaux.",
+    "sections": [
+      {
+        "titre": "Les membres de la Génération Y",
+        "valide": false,
+        "paragraphes": [
+          "Les membres de la Génération Y ont été influencés par des événements tels que la récession économique, les attentats terroristes du 11 septembre et la guerre en Irak. Ces événements ont eu un impact important sur leur façon de penser et de voir le monde.",
+          "Les Millennials sont souvent considérés comme étant très ouverts d’esprit, inclusifs et soucieux de l’environnement. Ils sont également très orientés vers la collaboration et préfèrent travailler en équipe plutôt que de manière autonome. Cette génération a une forte aversion pour les hiérarchies rigides et les structures organisationnelles traditionnelles."
+        ]
+      },
+      {
+        "titre": "La Génération Y a également des attentes",
+        "valide": false,
+        "paragraphes": [
+          "La Génération Y a également des attentes élevées en matière de travail et de vie personnelle. Ils cherchent un équilibre entre les deux et sont souvent prêts à sacrifier leur temps et leur énergie pour poursuivre leur passion. Ils ont également une forte préférence pour les emplois qui ont un sens et qui ont un impact positif sur la société.",
+          "Enfin, les Millennials sont très attachés à la technologie et sont souvent considérés comme étant constamment connectés. Ils sont également très adeptes de la consommation collaborative, de la location plutôt que de l’achat et de l’utilisation de produits écologiques.",
+          "En somme, la Génération Y est un groupe de personnes qui a grandi dans un monde en constante évolution technologique et sociétale. Ils ont des attentes élevées en matière de travail et de vie personnelle et sont très soucieux de l’environnement et de la durabilité. Ils sont souvent considérés comme étant ouverts d’esprit, inclusifs et collaboratifs."
+        ]
+      }
+    ]
+  }
+}

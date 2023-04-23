@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
-
 export default function Home({ categories, all }) {
   let [searchWord, setSearchWord] = useState("");
   let [searchList, setSearchList] = useState([...all]);
@@ -264,7 +263,7 @@ export default function Home({ categories, all }) {
               {categories.map((el, index) => (
                 <div key={index}>
                   <a
-                    href={`http://localhost:3000/categories/${el.categorie}`}
+                    href={`/categories/${el.categorie}`}
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
                     {el.categorie}
@@ -333,6 +332,89 @@ export default function Home({ categories, all }) {
                 </div>
               </div>
             ))}
+            <div className="categorie-resume">
+              <div className="categorie-resume-header">
+                <div className="categorie-name">Jeunesse</div>
+                <div className="categorie-color">
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      gridArea: "2 / 1 / 3 / 2",
+                      backgroundColor: "#7DD8F6",
+                    }}
+                  ></div>
+                </div>
+              </div>
+              <div className="categorie-resume-principal">
+                <div
+                  className="categorie-resume-principal-back"
+                  style={{
+                    overflow: "hidden",
+                    backgroundImage: `img/img2.jpg`,
+                    backgroundSize: "cover",
+                  }}
+                ></div>
+                <div className="categorie-resume-principal-front">
+                  <div className="resume-titre">
+                    Ceci est un titre que jecris volontairement long pour tester
+                    le site que je cree pour un client
+                  </div>
+                  <div className="resume-resume">
+                    <p>
+                      Ceci est un titre que jecris volontairement long pour
+                      tester le site que je cree pour un client. Ceci est un
+                      titre que jecris volontairement long pour tester le site
+                      que je cree pour un client. Ceci est un titre que ecris
+                      volontairement long pour tester le site que je cree pour
+                      un client.
+                    </p>
+                  </div>
+                  <div className="resume-author">Alexandre HOUNKPEVI</div>
+                  <div className="resume-date">18 Septembre 2023</div>
+                </div>
+              </div>
+              <div className="categorie-resume-others">
+                <div className="other-resume">
+                  <div className="other-resume-back">
+                    <img
+                      src="/img/img4.jpg"
+                      width={"100%"}
+                      height={"100%"}
+                    ></img>
+                  </div>
+                  <div className="other-resume-front">
+                    <div className="other-resume-titre">
+                      Ceci est un titre que jecris volontairement long pour
+                      tester le site que je cree pour un client
+                    </div>
+                    <div className="other-resume-author">
+                      Alexandre HOUNKPEVI
+                    </div>
+                    <div className="other-resume-date">18 Septembre 2023</div>
+                  </div>
+                </div>
+                <div className="other-resume">
+                  <div className="other-resume-back">
+                    <img
+                      src="img/img4.jpg"
+                      width={"100%"}
+                      height={"100%"}
+                    ></img>
+                  </div>
+                  <div className="other-resume-front">
+                    <div className="other-resume-titre">
+                      Ceci est un titre que jecris volontairement long pour
+                      tester le site que je cree pour un client
+                    </div>
+                    <div className="other-resume-author">
+                      Alexandre HOUNKPEVI
+                    </div>
+                    <div className="other-resume-date">18 Septembre 2023</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div id="content-computer">
             <div id="article-accueil">
@@ -356,7 +438,7 @@ export default function Home({ categories, all }) {
                       className="categorie-resume-principal"
                       onClick={(e) => {
                         window?.location?.assign(
-                          `http://localhost:3000/articles/${categorie.liste[0].url}`
+                          `/articles/${categorie.liste[0].url}`
                         );
                       }}
                     >
@@ -392,9 +474,7 @@ export default function Home({ categories, all }) {
                           key={id}
                           className="other-resume"
                           onClick={(e) => {
-                            window?.location?.assign(
-                              `http://localhost:3000/articles/${el.url}`
-                            );
+                            window?.location?.assign(`/articles/${el.url}`);
                           }}
                         >
                           <div
@@ -438,7 +518,7 @@ export default function Home({ categories, all }) {
                 {searchList.map((el, index) => (
                   <div key={index} className="liste-titre">
                     <a
-                      href={`http://localhost:3000/articles/${el.url}`}
+                      href={`/articles/${el.url}`}
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
                       {el.titre}
@@ -463,19 +543,19 @@ function extractData(data) {
   };
 }
 export async function getServerSideProps() {
-  let Map = await (
-    await fetch("http://localhost:3000/articles/map.json")
+  let { liste } = await (
+    await fetch(`${process.env.URL}articles/map.json`)
   ).json();
+  let Map = liste;
+  console.log(liste);
   let all = await (async () => {
     let liste = [];
     for (let i = 0; i < Map.length; i++) {
+      let x = `${process.env.URL}articles/${Map[i]}.json`;
+      let { data } = await (await fetch(x)).json();
       liste.push({
         url: Map[i],
-        ...extractData(
-          await (
-            await fetch(`http://localhost:3000/articles/${Map[i]}.json`)
-          ).json()
-        ),
+        ...extractData(data),
       });
     }
     for (let i = 0; i < liste.length; i++) {
@@ -493,13 +573,10 @@ export async function getServerSideProps() {
   let content = await (async () => {
     let liste = [];
     for (let i = 0; i < Map.length; i++) {
-      liste.push(
-        extractData(
-          await (
-            await fetch(`http://localhost:3000/articles/${Map[i]}.json`)
-          ).json()
-        )
-      );
+      let { data } = await (
+        await fetch(`${process.env.URL}articles/${Map[i]}.json`)
+      ).json();
+      liste.push(extractData(data));
     }
     return liste;
   })();
@@ -542,6 +619,7 @@ export async function getServerSideProps() {
     return list;
   })();
   articles_by_categorie.unshift({ categorie: "A la Une", liste: a_la_une });
+  console.log(articles_by_categorie[0]);
   return {
     props: {
       categories: articles_by_categorie,
